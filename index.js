@@ -1,3 +1,4 @@
+var arr = [];
 var ops = [
   function sum(a, b) {
     return a + b;
@@ -7,6 +8,16 @@ var ops = [
   },
   function div(a, b) {
     return a / b
+  },
+  function date() {
+    var d = new Date();
+    return d.toString();
+  },
+  function push(a) {
+    arr.push(a);
+  },
+  function shift() {
+    arr.shift();
   }
 ];
 
