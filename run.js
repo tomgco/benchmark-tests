@@ -2,14 +2,17 @@ var arr = [];
 var ops = [sum, mul, div, date, push, shift];
 
 var op;
-function do_run_me_some() {
-  for (var i = 0 ; i < 4e8; i ++) {
-    op = ops[Math.floor(Math.random() * ops.length)];
-    op(Math.random() * 1000, Math.random() * 1000);
-  }
+var ran = 0;
+MAX = 1e7;
+
+function run() {
+  op = ops[Math.floor(Math.random() * ops.length)];
+  op(Math.random() * 1000, Math.random() * 1000);
+  ran ++;
+  if (ran < MAX) setImmediate(run);
 }
 
-module.exports = do_run_me_some;
+module.exports = run;
 
 function sum(a, b) {
   return a + b;
