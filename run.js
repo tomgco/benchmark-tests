@@ -3,7 +3,7 @@ var ops = [sum, mul, div, date, push, shift];
 
 var op;
 var ran = 0;
-MAX = 1e7;
+MAX = 3e6;
 
 function run() {
   op = ops[Math.floor(Math.random() * ops.length)];
