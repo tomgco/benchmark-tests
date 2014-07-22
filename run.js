@@ -6,7 +6,7 @@ var ran = 0;
 const MAX = 3e6;
 
 function run() {
-  op = ops[Math.floor(Math.random() * ops.length)];
+  op = ops[Math.ceil(Math.random() * ops.length)];
   op(Math.random() * 1000, Math.random() * 1000);
   ran ++;
   if (ran < MAX) setImmediate(run);
