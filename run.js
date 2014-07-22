@@ -1,13 +1,13 @@
 var arr = [];
-var ops = [sum, mul, div, date, push, shift];
+var ops = [sum, mul, div, date, push, shift, zfillright];
 
 var op;
 var ran = 0;
 const MAX = 3e6;
 
 function run() {
-  op = ops[Math.ceil(Math.random() * ops.length)];
-  op(Math.random() * 1000, Math.random() * 1000);
+  op = ops[Math.floor(Math.random() * ops.length)];
+  op(Math.random() * 1002, Math.random() * 1001);
   ran ++;
   if (ran < MAX) setImmediate(run);
 }
@@ -16,6 +16,10 @@ module.exports = run;
 
 function sum(a, b) {
   return a + b;
+}
+
+function zfillright(a, b) {
+ return a >>> b
 }
 
 function mul(a, b) {
