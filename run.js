@@ -4,16 +4,13 @@ var ops = [sum, mul, div, date, push, shift, zfillright, bitamp, not];
 var op;
 var ran = 0;
 const MAX = 3e6;
-var results = [];
 
 function run() {
   op = ops[Math.floor(Math.random() * ops.length)];
-  var value = op(Math.random() * 1002, Math.random() * 1001);
+  op(Math.random() * 1002, Math.random() * 1001);
 
   ran ++;
   if (ran < MAX) setImmediate(run);
-  else JSON.stringify(results);
-  results.push(value);
 }
 
 module.exports = run;
