@@ -1,5 +1,5 @@
 var arr = [];
-var ops = [sum, mul, div, date, push, shift, zfillright];
+var ops = [sum, mul, div, date, push, shift, zfillright, bitamp];
 
 var op;
 var ran = 0;
@@ -20,6 +20,10 @@ function sum(a, b) {
 
 function zfillright(a, b) {
  return a >>> b
+}
+
+function bitamp(a, b) {
+ return a & b
 }
 
 function mul(a, b) {
